@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Arduino Telemetry Dashboard</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>Arduino Telemetry</h1>
+        <p class="muted">Live analog stream from A0 (0–1023). Showing last ~600 samples.</p>
+
+        <div class="badges">
+            <span class="chip">Dropped: <b id="dropped">0</b></span>
+            <span class="chip">Samples/min: <b id="mpm">0</b></span>
+        </div>
+
+        <svg id="chart" viewBox="0 0 800 240" aria-label="Live chart">
+            <rect x="0" y="0" width="800" height="240" rx="12"></rect>
+            <path id="series" d=""></path>
+        </svg>
+
+    </main>
+
+    <script src="./app.js" type="module"></script>
+</body>
+
+</html>
